@@ -9,7 +9,7 @@ module.exports = {
     } ,
     devServer: {
         port: 8080,
-        contentBase: '/public',
+        contentBase: './public',
     },
     resolve: {
         extensions: ['', '.js', '.jsx'],
@@ -22,7 +22,7 @@ module.exports = {
     ],
     module: {
         loaders: [{
-            teste: /.js[x]?$/,
+            test: /.js[x]?$/,
             loader: 'babel-loader',
             exclude: /node_modules/,
             query: {
