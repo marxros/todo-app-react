@@ -2,7 +2,7 @@ import React from 'react'
 import IconButton from '../template/iconButton'
 
 export default props => {
-
+    // funcao para renderizar as linhas das tabelas
     const renderRows = () => {
         const list = props.list || []
         return list.map(todo => (
@@ -16,6 +16,7 @@ export default props => {
         ))
     }
 
+    // estrutura da tabela
     return (
         <table className='table'>
             <thead>

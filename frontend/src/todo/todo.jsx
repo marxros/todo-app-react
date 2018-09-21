@@ -20,10 +20,11 @@ export default class Todo extends Component {
         this.handleChange = this.handleChange.bind(this)
         this.handleRemove = this.handleRemove.bind(this)
 
-        this.refresh()
+        this.refresh() // iniciar já com a lista carregada
         
     }
     
+    // pega a lista mais atualizada ordenando de forma decrescente
     refresh() {
         axios.get(`${URL}?sort=-createdAt`)
             .then(resp=> this.setState({...this.state, description: '', list: resp.data}))
@@ -32,7 +33,7 @@ export default class Todo extends Component {
     handleAdd() {
         const description = this.state.description
         axios.post(URL, { description })
-            .then(resp => this.refresh())
+            .then(resp => this.refresh()) // sempre que adicionar uma tarefa, ele retorna a lista atualizada
     }
 
     handleChange(e) {
